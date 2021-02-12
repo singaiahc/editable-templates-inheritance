@@ -1,0 +1,9 @@
+<sly data-sly-use.ih="com.singaiah.aem.core.models.Inheritance">
+	<sly data-sly-test="${ih.isConfigPage}">
+		The actual Inherited content will be visible on actual page
+	</sly>
+	
+	<sly data-sly-test="${!ih.isConfigPage}">
+		<sly data-sly-resource = "${ih.inheritancePath @ resourceType = ih.inheritance}" />
+	</sly>
+</sly>
