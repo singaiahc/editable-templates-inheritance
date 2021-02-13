@@ -36,6 +36,7 @@
                                         fieldLabel="Inheritance Path"
                                         name="./inheritancePath"
                                         rootPath="/content"
+                                        predicate="nosystem"
                                         wrapperClass="cmp-image--editor-link"/>
                                 </items>
                             </column>
