@@ -11,13 +11,11 @@ import org.apache.sling.api.resource.ResourceResolver;
 import org.apache.sling.models.annotations.Default;
 import org.apache.sling.models.annotations.Model;
 import org.apache.sling.models.annotations.injectorspecific.InjectionStrategy;
-import org.apache.sling.models.annotations.injectorspecific.ScriptVariable;
 import org.apache.sling.models.annotations.injectorspecific.SlingObject;
 import org.apache.sling.models.annotations.injectorspecific.ValueMapValue;
 
 import com.day.cq.commons.inherit.HierarchyNodeInheritanceValueMap;
 import com.day.cq.commons.inherit.InheritanceValueMap;
-import com.day.cq.wcm.api.Page;
 
 import java.util.Optional;
 
@@ -39,7 +37,6 @@ public class Inheritance {
     @Inject @Default(values = "")
     private String inheritance = "";
 
-    private boolean isConfigPage = false;
     private String inheritancePath;
 
     @PostConstruct
@@ -47,18 +44,16 @@ public class Inheritance {
     {
         String path = Optional.ofNullable(currentResource)
                 .map(Resource::getPath).orElse("");
-        if(path.startsWith("/conf/") || path.startsWith("/content/experience-fragments/")) 
-        {
-        	isConfigPage = true;
-        	return;
-        } 
-        path = StringUtils.substringBefore(path, "/jcr:content");
+
+        path         = StringUtils.substringBefore(path, "/jcr:content");
         Resource res = resolver.getResource(path);
+        
         InheritanceValueMap iProps = new HierarchyNodeInheritanceValueMap(res);
-        String[] elements               = inheritance.split("/");
-        inheritancePath                 = iProps.getInherited("inheritancePath", String.class) + "/" + elements[elements.length - 1];
+        String[] elements          = inheritance.split("/");
+        inheritancePath            = iProps.getInherited("inheritancePath", String.class) + "/" + elements[elements.length - 1];
         
         return;
+        
     } //init
 
 
@@ -69,18 +64,9 @@ public class Inheritance {
     } //getInheritance
 
 
-	public boolean isConfigPage() 
-	{
-		return isConfigPage;
-	} //isConfigPage
-
-
 	public String getInheritancePath() 
 	{
 		return inheritancePath;
 	}
 	
-	
-	
-
 } //Inheritance
