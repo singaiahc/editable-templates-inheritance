@@ -4,6 +4,8 @@
     <jcr:content
         cq:contextHubPath="/etc/cloudsettings/default/contexthub"
         cq:contextHubSegmentsPath="/etc/segmentation/contexthub"
+        cq:lastModified="{Date}2021-02-07T15:00:37.795-06:00"
+        cq:lastModifiedBy="admin"
         cq:template="/conf/editableTemplateInheritance/settings/wcm/templates/page-content"
         jcr:primaryType="cq:PageContent"
         jcr:title="en"
@@ -75,8 +77,30 @@
                         jcr:primaryType="nt:unstructured"
                         sling:resourceType="editableTemplateInheritance/components/helloworld"
                         text="lalala :)"/>
+                    <inheritance
+                        jcr:created="{Date}2021-02-07T14:54:55.727-06:00"
+                        jcr:createdBy="admin"
+                        jcr:lastModified="{Date}2021-02-07T14:54:55.727-06:00"
+                        jcr:lastModifiedBy="admin"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="editableTemplateInheritance/components/inheritance/v1/inheritance"/>
+                    <inheritance_1206980060
+                        jcr:created="{Date}2021-02-07T14:54:59.605-06:00"
+                        jcr:createdBy="admin"
+                        jcr:lastModified="{Date}2021-02-07T14:54:59.605-06:00"
+                        jcr:lastModifiedBy="admin"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="editableTemplateInheritance/components/inheritance/v1/inheritance"/>
+                    <button
+                        jcr:created="{Date}2021-02-07T15:00:37.792-06:00"
+                        jcr:createdBy="admin"
+                        jcr:lastModified="{Date}2021-02-07T15:00:37.792-06:00"
+                        jcr:lastModifiedBy="admin"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="editableTemplateInheritance/components/button"/>
                 </container>
             </container>
         </root>
     </jcr:content>
+    <home/>
 </jcr:root>

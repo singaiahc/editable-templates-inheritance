@@ -4,4 +4,5 @@
     <filter root="/content/editableTemplateInheritance" mode="merge"/>
     <filter root="/content/dam/editableTemplateInheritance" mode="merge"/>
     <filter root="/content/experience-fragments/editableTemplateInheritance" mode="merge"/>
+    <filter root="/etc/acs-commons/lists/component-inheritance" mode="merge"/>
 </workspaceFilter>
